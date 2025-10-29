@@ -62,7 +62,9 @@ app.get('/register', (req, res) => res.render('register'));
 app.post('/register', async (req, res) => {
     const { fullName, email, password } = req.body;
     try {
-        const salt = await bcrypt.genSalt(10);
+        // Use lower salt rounds for serverless (faster)
+        const saltRounds = process.env.NODE_ENV === 'production' ? 8 : 10;
+        const salt = await bcrypt.genSalt(saltRounds);
         const passwordHash = await bcrypt.hash(password, salt);
         
         const newUser = await User.create({
