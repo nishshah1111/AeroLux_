@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const connectToDatabase = require('./lib/mongodb');
 const Aircraft = require('./models/aircraft');
 const User = require('./models/user');
@@ -23,12 +24,20 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'static')));
 app.use(express.urlencoded({ extended: true }));
 
-// --- Session Configuration ---
+// --- Session Configuration with MongoDB Store ---
 app.use(session({
-  secret: 'a-very-secret-key-that-should-be-in-env-file',
+  secret: process.env.SESSION_SECRET || 'a-very-secret-key-that-should-be-in-env-file',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 1000 * 60 * 60 * 24 }
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI,
+    touchAfter: 24 * 3600 // lazy session update
+  }),
+  cookie: { 
+    maxAge: 1000 * 60 * 60 * 24,
+    secure: process.env.NODE_ENV === 'production', // use secure cookies in production
+    httpOnly: true
+  }
 }));
 
 // Middleware to make user session available to all templates
