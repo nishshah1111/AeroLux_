@@ -170,9 +170,12 @@ app.get('/inquiry-confirmation', (req, res) => {
 app.get('/about', (req, res) => res.render('about'));
 app.get('/contact', (req, res) => res.render('contact'));
 
-app.listen(port, () => {
-    console.log(`AeroLux server running at http://localhost:${port}`);
-});
+// Only start server if running locally (not in Vercel)
+if (process.env.NODE_ENV !== 'production' && require.main === module) {
+    app.listen(port, () => {
+        console.log(`AeroLux server running at http://localhost:${port}`);
+    });
+}
 
 // Export for Vercel serverless deployment
 module.exports = app;
