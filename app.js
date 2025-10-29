@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // --- Session Configuration with MongoDB Store ---
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'a-very-secret-key-that-should-be-in-env-file',
+  secret: 'mongodb+srv://aerolux_user:mypassword@cluster0.shhw6yy.mongodb.net/aerolux_db?appName=Cluster0' || 'a-very-secret-key-that-should-be-in-env-file',
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
