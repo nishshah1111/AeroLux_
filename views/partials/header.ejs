@@ -1,0 +1,40 @@
+<header class="silver-lining-bg sticky top-0 z-50 shadow-md">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold platinum-grey-text">
+            Aero<span class="sunlit-gold-text">Lux</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/aircraft" class="nav-link">Aircraft</a>
+            <a href="/about" class="nav-link">About Us</a>
+            <a href="/contact" class="nav-link">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+            <% if (user) { %>
+                <span class="text-sm">Welcome, <%= user.full_name.split(' ')[0] %></span>
+                <a href="/logout" class="px-6 py-2 rounded-md bg-gray-600 text-white hover:bg-gray-700 transition-colors">
+                    Logout
+                </a>
+            <% } else { %>
+                <a href="/login" class="px-6 py-2 rounded-md sunlit-gold-accent text-white hover:opacity-90 transition-opacity">
+                    Login
+                </a>
+            <% } %>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2">
+        <a href="/" class="block nav-link">Home</a>
+        <a href="/aircraft" class="block nav-link">Aircraft</a>
+        <a href="/about" class="block nav-link">About Us</a>
+        <a href="/contact" class="block nav-link">Contact</a>
+        <hr class="border-gray-400/50 my-2">
+         <% if (user) { %>
+            <a href="/logout" class="block nav-link">Logout</a>
+        <% } else { %>
+            <a href="/login" class="block nav-link">Login</a>
+        <% } %>
+    </div>
+</header>

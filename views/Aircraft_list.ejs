@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aircraft Listings | AeroLux</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body class="azure-sky-bg platinum-grey-text">
+
+    <header class="silver-lining-bg sticky top-0 z-50 shadow-md">
+       <%- include('./partials/header') %>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in-down">Available Aircraft</h1>
+        
+        <div class="flex flex-col md:flex-row gap-8">
+            <aside class="w-full md:w-1/4 lg:w-1/5 animate-fade-in">
+                <div class="silver-lining-bg p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4">Filter & Sort</h3>
+                    <form action="/aircraft" method="GET">
+                        <div class="space-y-6">
+                            <div>
+                                <label for="manufacturer" class="font-semibold block mb-2">Manufacturer</label>
+                                <select name="manufacturer" id="manufacturer" class="w-full p-2 rounded-md">
+                                    <option>All</option>
+                                    <option>Gulfstream</option>
+                                    <option>Bombardier</option>
+                                    <option>Cessna</option>
+                                    <option>Dassault</option>
+                                    <option>Embraer</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="year" class="font-semibold block mb-2">Minimum Year</label>
+                                <input type="number" name="year" placeholder="e.g. 2020" id="year" class="w-full p-2 rounded-md">
+                            </div>
+                            <button type="submit" class="w-full p-3 rounded-md sunlit-gold-accent text-white font-semibold hover:opacity-90">Apply Filters</button>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+            
+            <section class="w-full md:w-3/4 lg:w-4/5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <% if (aircrafts.length > 0) { %>
+                        <% aircrafts.forEach(plane => { %>
+                            <div class="jet-card bg-white rounded-lg shadow-lg overflow-hidden text-left transform hover:-translate-y-2 transition-transform duration-300 animate-fade-in-up">
+                                <div class="overflow-hidden h-56">
+                                    <img src="<%= plane.image_url %>" alt="<%= plane.manufacturer %> <%= plane.model %>" class="jet-card-image w-full h-full object-cover">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-1"><%= plane.manufacturer %> <%= plane.model %></h3>
+                                    <p class="text-lg font-semibold sunlit-gold-text mb-2">$<%= plane.price.toLocaleString('en-US') %></p>
+                                    <p class="text-sm mb-4">Year: <%= plane.year %> | TTAF: <%= plane.ttaf %></p>
+                                    <a href="/aircraft/<%= plane.id %>" class="inline-block w-full text-center px-6 py-2 rounded-md sunlit-gold-accent text-white hover:opacity-90 transition-opacity">View Details</a>
+                                </div>
+                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <p class="col-span-full text-center text-lg">No aircraft match the current filter criteria.</p>
+                    <% } %>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+    <script src="/script.js"></script>
+</body>
+</html>

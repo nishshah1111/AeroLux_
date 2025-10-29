@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AeroLux</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body class="azure-sky-bg platinum-grey-text">
+
+    <!-- Header & Navigation -->
+    <header class="silver-lining-bg sticky top-0 z-50 shadow-md">
+        <%- include('./partials/header') %>
+    </header>
+
+    <main>
+        <!-- Our Story Section -->
+        <section class="py-16 md:py-24 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-bold">Our Story</h1>
+                <div class="w-24 h-1 sunlit-gold-accent mx-auto my-6"></div>
+                <p class="max-w-3xl mx-auto text-lg">
+                    Founded by a team of veteran aviators and industry-leading brokers, AeroLux was born from a shared passion for flight and a desire to elevate the aircraft transaction experience. We saw an opportunity to replace the often opaque and complex process with one defined by transparency, integrity, and unparalleled client dedication. Our mission is to be your lifelong aviation partner, providing data-driven insights and expert guidance for all your private flying needs.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Why Choose Us -->
+        <section class="bg-white py-16 md:py-24">
+             <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Why Choose AeroLux?</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <div class="p-6">
+                         <h3 class="text-2xl font-bold mb-3">Unmatched Expertise</h3>
+                         <p>Our team possesses decades of hands-on experience in aircraft sales, acquisitions, and operations. We understand the nuances of the market and the technical details of each aircraft, ensuring you are always making an informed decision.</p>
+                    </div>
+                    <div class="p-6">
+                         <h3 class="text-2xl font-bold mb-3">Global Network</h3>
+                         <p>With connections spanning every continent, we have real-time access to off-market aircraft and a vast pool of qualified buyers. This global reach gives our clients a distinct advantage in a competitive marketplace.</p>
+                    </div>
+                    <div class="p-6">
+                         <h3 class="text-2xl font-bold mb-3">Commitment to Service</h3>
+                         <p>At AeroLux, you are not just a transaction. We pride ourselves on building lasting relationships, offering personalized service and steadfast support long after the deal is done. Your success is our success.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Our Team -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Meet Our Team</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-center items-start">
+
+                    <!-- Team Member 1: Anadi Jain -->
+                    <div class="text-center team-member">
+                        <img src="/images/team/1anadi.jpg" class="w-48 h-48 mx-auto rounded-full shadow-lg mb-4 team-member-img" alt="Anadi Jain">
+                        <h4 class="text-xl font-bold">Anadi Jain</h4>
+                        <p class="text-sm text-gray-600 mt-1">Operations Manager</p>
+                    </div>
+                    <!-- Team Member 2: Vatsal Panchal -->
+                    <div class="text-center team-member">
+                        <img src="/images/team/2vatsal.jpg" class="w-48 h-48 mx-auto rounded-full shadow-lg mb-4 team-member-img" alt="Vatsal Panchal">
+                        <h4 class="text-xl font-bold">Vatsal Panchal</h4>
+                        <p class="text-sm text-gray-600 mt-1">Database Developer</p>
+                    </div>
+                    <!-- Team Member 3: Nish Shah -->
+                    <div class="text-center team-member">
+                        <img src="/images/team/3nish-2.jpg" class="w-48 h-48 mx-auto rounded-full shadow-lg mb-4 team-member-img" alt="Nish Shah">
+                        <h4 class="text-xl font-bold">Nish Shah</h4>
+                        <p class="text-sm text-gray-600 mt-1">Software Developer</p>
+                    </div>
+                    <!-- Team Member 4: Krutarth Tailor -->
+                    <div class="text-center team-member">
+                        <img src="/images/team/4krutarth-2.jpg" class="w-48 h-48 mx-auto rounded-full shadow-lg mb-4 team-member-img" alt="Krutarth Tailor">
+                        <h4 class="text-xl font-bold">Krutarth Tailor</h4>
+                        <p class="text-sm text-gray-600 mt-1">Software Developer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="silver-lining-bg pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-3">AeroLux</h4>
+                    <p class="text-sm">Your journey begins here. Experience the ultimate in private aviation.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="hover:sunlit-gold-text">Home</a></li>
+                        <li><a href="/aircraft" class="hover:sunlit-gold-text">Aircraft</a></li>
+                        <li><a href="/about" class="hover:sunlit-gold-text">About Us</a></li>
+                        <li><a href="/contact" class="hover:sunlit-gold-text">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:sunlit-gold-text">Aircraft Sales</a></li>
+                        <li><a href="#" class="hover:sunlit-gold-text">Acquisitions</a></li>
+                        <li><a href="#" class="hover:sunlit-gold-text">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:sunlit-gold-text">Facebook</a>
+                        <a href="#" class="hover:sunlit-gold-text">Twitter</a>
+                        <a href="#" class="hover:sunlit-gold-text">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-500/30 text-center text-sm pt-6">
+                <p>&copy; 2024 AeroLux. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

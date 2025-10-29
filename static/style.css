@@ -1,0 +1,115 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #E0F2F7; /* Azure Sky */
+    color: #5C6F7D; /* Platinum Grey */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+.azure-sky-bg { background-color: #E0F2F7; }
+.platinum-grey-text { color: #5C6F7D; }
+.sunlit-gold-accent { background-color: #D4AF37; }
+.sunlit-gold-text { color: #D4AF37; }
+.sunlit-gold-border { border-color: #D4AF37; }
+.silver-lining-bg { background-color: #CFD8DC; }
+
+.hero-section {
+    background-image: url('https://images.unsplash.com/photo-1605545224395-e5f849911e86?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #D4AF37;
+}
+
+.nav-link.active {
+    color: #D4AF37;
+    font-weight: 600;
+}
+
+.jet-card-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.jet-card:hover .jet-card-image {
+    transform: scale(1.05);
+}
+/* Add to existing style.css */
+
+/* --- Home Page Hero --- */
+.home-hero-bg {
+    background-image: url('/images/plane-takeoff.jpg'); /* Make sure you have an image at this path */
+    background-size: cover;
+    background-position: center;
+    animation: zoomIn 20s ease-in-out infinite;
+}
+
+/* --- Animations --- */
+@keyframes zoomIn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0; /* Start hidden */
+}
+.animate-fade-in-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+}
+
+/* --- Delay for staggered effect (optional but nice) --- */
+.jet-card:nth-child(1) { animation-delay: 0.1s; }
+.jet-card:nth-child(2) { animation-delay: 0.2s; }
+.jet-card:nth-child(3) { animation-delay: 0.3s; }
+.jet-card:nth-child(4) { animation-delay: 0.4s; }
+/* ...and so on */
+
+
+/* --- Video Background Styling --- */
+.home-hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Puts the video behind all other content */
+    object-fit: cover; /* Ensures the video covers the screen without stretching */
+}
+
+/* Team member image handling */
+.team-member-img {
+    object-fit: cover; /* ensure the circular crop shows a centered image */
+    display: block;
+}
+
+/* Responsive note: the about page uses Tailwind utility classes to create a 4-column layout at md+ widths */

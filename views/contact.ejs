@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | AeroLux</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body class="azure-sky-bg platinum-grey-text">
+
+    <!-- Header & Navigation -->
+    <header class="silver-lining-bg sticky top-0 z-50 shadow-md">
+        <%- include('./partials/header') %>
+    </header>
+
+    <main class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold">Get In Touch</h1>
+                <p class="max-w-2xl mx-auto text-lg mt-4">We're here to answer any questions you may have. Reach out to us and we'll respond as soon as we can.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-8 rounded-lg shadow-xl">
+                <!-- Contact Form -->
+                <div>
+    <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
+    <form action="/inquire" method="POST">
+        <div class="space-y-4">
+            <input type="text" name="userName" placeholder="Your Name" required class="w-full p-3 rounded-md silver-lining-bg">
+            <input type="email" name="userEmail" placeholder="Your Email" required class="w-full p-3 rounded-md silver-lining-bg">
+            <input type="text" name="subject" placeholder="Subject" required class="w-full p-3 rounded-md silver-lining-bg">
+            <textarea name="message" placeholder="Your Message..." rows="6" required class="w-full p-3 rounded-md silver-lining-bg"></textarea>
+            <button type="submit" class="w-full p-3 rounded-md sunlit-gold-accent text-white font-semibold hover:opacity-90">Send Message</button>
+        </div>
+    </form>
+</div>
+                
+                <!-- Contact Info & Map -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+                    <div class="space-y-4 mb-8">
+                        <p><strong>Address:</strong> 123 Aviation Way, Geneva, Switzerland 1215</p>
+                        <p><strong>Phone:</strong> +41 22 717 71 00</p>
+                        <p><strong>Email:</strong> contact@aerolux.com</p>
+                    </div>
+                    <div class="h-80 rounded-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.761048039304!2d6.10586861557008!3d46.21817577911681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c642a8f52c53d%3A0x8e8312e73752da9b!2sGeneva%20Airport!5e0!3m2!1sen!2sus!4v1678886400000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="silver-lining-bg pt-12 pb-8 mt-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-3">AeroLux</h4>
+                    <p class="text-sm">Your journey begins here. Experience the ultimate in private aviation.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="hover:sunlit-gold-text">Home</a></li>
+                        <li><a href="/aircraft" class="hover:sunlit-gold-text">Aircraft</a></li>
+                        <li><a href="/about" class="hover:sunlit-gold-text">About Us</a></li>
+                        <li><a href="/contact" class="hover:sunlit-gold-text">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:sunlit-gold-text">Aircraft Sales</a></li>
+                        <li><a href="#" class="hover:sunlit-gold-text">Acquisitions</a></li>
+                        <li><a href="#" class="hover:sunlit-gold-text">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:sunlit-gold-text">Facebook</a>
+                        <a href="#" class="hover:sunlit-gold-text">Twitter</a>
+                        <a href="#" class="hover:sunlit-gold-text">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-500/30 text-center text-sm pt-6">
+                <p>&copy; 2024 AeroLux. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
