@@ -46,17 +46,18 @@ app.use((req, res, next) => {
   next();
 });
 
-// --- Authentication Middleware ---
+// --- Authentication Middleware (DISABLED) ---
 const requireLogin = (req, res, next) => {
-    if (!req.session.user) {
-        return res.redirect('/login');
-    }
+    // Authentication disabled - allow all access
     next();
 };
 
 // --- Routes ---
 
 app.get('/', (req, res) => res.render('index'));
+
+// Disabled authentication routes (commented out for now)
+/*
 app.get('/register', (req, res) => res.render('register'));
 
 app.post('/register', async (req, res) => {
@@ -119,6 +120,7 @@ app.get('/logout', (req, res) => {
         res.redirect('/');
     });
 });
+*/
 
 app.get('/aircraft', requireLogin, async (req, res) => {
     try {
